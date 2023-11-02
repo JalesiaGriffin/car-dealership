@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
     private String name;
@@ -12,35 +13,48 @@ public class Dealership {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.inventory = inventory;
+        this.inventory = new ArrayList<Vehicle>();
     }
 
-    public ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
+    @Override
+    public String toString() {
+        return "Dealership{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
+    public List<Vehicle> getVehiclesByPrice(double min, double max) {
         return null;
     }
 
-    public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model){
+    public List<Vehicle> getVehiclesByMakeModel(String make, String model){
         return null;
     }
 
-    public ArrayList<Vehicle> getVehiclesByColor(String color){
+    public List<Vehicle> getVehiclesByYear(int min, int max) {
         return null;
     }
 
-    public ArrayList<Vehicle> getVehiclesByMileage(int odometer){
+    public List<Vehicle> getVehiclesByColor(String color){
         return null;
     }
 
-    public ArrayList<Vehicle> getVehiclesByType(String vehicleType){
+    public List<Vehicle> getVehiclesByMileage(int odometer){
         return null;
     }
 
-    public ArrayList<Vehicle> getAllVehicles(){
+    public List<Vehicle> getVehiclesByType(String vehicleType){
         return null;
+    }
+
+    public List<Vehicle> getAllVehicles(){
+        return inventory;
     }
 
     public void addVehicle(Vehicle vehicle){
-
+        inventory.add(vehicle);
     }
 
     public void removeVehicle(Vehicle vehicle){
