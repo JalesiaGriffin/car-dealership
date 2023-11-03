@@ -36,23 +36,53 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model){
-        return null;
+        List<Vehicle> vehicles = new ArrayList<>();
+        for(Vehicle v: inventory){
+            if(v.getMake().equalsIgnoreCase(make) && v.getModel().equalsIgnoreCase(model)){
+                vehicles.add(v);
+            }
+        }
+        return vehicles;
     }
 
     public List<Vehicle> getVehiclesByYear(int min, int max) {
-        return null;
+        List<Vehicle> vehicles = new ArrayList<>();
+        for(Vehicle v: inventory){
+            if(v.getYear() >= min && v.getYear() <= max){
+                vehicles.add(v);
+            }
+        }
+        return vehicles;
     }
 
     public List<Vehicle> getVehiclesByColor(String color){
-        return null;
+        List<Vehicle> vehicles = new ArrayList<>();
+        for(Vehicle v: inventory){
+            if(v.getColor().equalsIgnoreCase(color)){
+                vehicles.add(v);
+            }
+        }
+        return vehicles;
     }
 
     public List<Vehicle> getVehiclesByMileage(int odometer){
-        return null;
+        List<Vehicle> vehicles = new ArrayList<>();
+        for(Vehicle v: inventory){
+            if(v.getOdometer() == odometer){
+                vehicles.add(v);
+            }
+        }
+        return vehicles;
     }
 
     public List<Vehicle> getVehiclesByType(String vehicleType){
-        return null;
+        List<Vehicle> vehicles = new ArrayList<>();
+        for(Vehicle v: inventory){
+            if(v.getVehicleType().equalsIgnoreCase(vehicleType)){
+                vehicles.add(v);
+            }
+        }
+        return vehicles;
     }
 
     public List<Vehicle> getAllVehicles(){
@@ -66,5 +96,4 @@ public class Dealership {
     public void removeVehicle(Vehicle vehicle){
 
     }
-
 }
