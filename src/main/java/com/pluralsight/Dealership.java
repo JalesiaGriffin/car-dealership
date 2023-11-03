@@ -16,12 +16,45 @@ public class Dealership {
         this.inventory = new ArrayList<Vehicle>();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public ArrayList<Vehicle> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<Vehicle> inventory) {
+        this.inventory = inventory;
+    }
+
     @Override
     public String toString() {
         return "Dealership{" +
                 "name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
+                ", inventory=" + inventory +
                 '}';
     }
 
@@ -94,6 +127,6 @@ public class Dealership {
     }
 
     public void removeVehicle(Vehicle vehicle){
-
+        inventory.remove(vehicle);
     }
 }
