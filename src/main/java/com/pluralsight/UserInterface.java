@@ -105,7 +105,7 @@ public class UserInterface {
         int vin = scan.nextInt();
         scan.nextLine();
 
-        System.out.print("Enter vin: ");
+        System.out.print("Enter Year: ");
         int year = scan.nextInt();
         scan.nextLine();
 
@@ -130,32 +130,49 @@ public class UserInterface {
         scan.nextLine();
 
         dealership.addVehicle(new Vehicle(vin, year, make, model, type, color, odometer, price));
+        System.out.println("vehicle added.");
 
         DealershipFileManager dfm = new DealershipFileManager();
         dfm.saveDealership(dealership);
     }
 
     public void processRemoveVehicleRequest(){
+        List<Vehicle> vehicles = dealership.getAllVehicles();
+        System.out.print("Enter vin: ");
+        int vin = scan.nextInt();
 
+        for (Vehicle v: vehicles) {
+            if (v.getVin() == vin) {
+                dealership.removeVehicle(v);
+                System.out.println("vehicle removed.");
+                break;
+            }
+            else {
+                System.out.println("vehicle not found.");
+            }
+        }
+        DealershipFileManager dfm = new DealershipFileManager();
+        dfm.saveDealership(dealership);
     }
 
     public void menu() {
-        System.out.println("Menu");
-        System.out.println("1 - Find vehicles within a price range");
-        System.out.println("2 - Find vehicles by make / model");
-        System.out.println("3 - Find vehicles by year range");
-        System.out.println("4 - Find vehicles by color");
-        System.out.println("5 - Find vehicles by mileage range");
-        System.out.println("6 - Find vehicles by type (car, truck, SUV, van)");
-        System.out.println("7 - List ALL vehicles");
-        System.out.println("8 - Add a vehicle");
-        System.out.println("9 - Remove a vehicle");
-        System.out.println("99 - Quit\n");
+        System.out.println("\nMenu");
+        System.out.println("1) Find vehicles within a price range");
+        System.out.println("2) Find vehicles by make / model");
+        System.out.println("3) Find vehicles by year range");
+        System.out.println("4) Find vehicles by color");
+        System.out.println("5) Find vehicles by mileage range");
+        System.out.println("6) Find vehicles by type (car, truck, SUV, van)");
+        System.out.println("7) List ALL vehicles");
+        System.out.println("8) Add a vehicle");
+        System.out.println("9) Remove a vehicle");
+        System.out.println("99) Quit\n");
     }
 
     private void displayVehicles(List<Vehicle> vehicles) {
+        Vehicle.printVehicleHeader();
         for(Vehicle v: vehicles){
-            System.out.println(v);
+            v.printVehicle(v);
         }
     }
 
