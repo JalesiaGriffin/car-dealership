@@ -51,6 +51,7 @@ public class DealershipFileManager {
             String phone = dealership.getPhone();
             BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME));
             writer.write(name + "|" + address + "|" + phone);
+            writer.newLine();
 
 
             // VEHICLES
