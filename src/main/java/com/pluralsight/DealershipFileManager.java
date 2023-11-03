@@ -3,11 +3,10 @@ package com.pluralsight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
+
 
 public class DealershipFileManager {
-    public static Dealership getDealership() {
+    public Dealership getDealership() {
         Dealership dealership = null;
         try {
             // INSTANTIATE READER
@@ -35,9 +34,9 @@ public class DealershipFileManager {
                 int odometer = Integer.parseInt(tokens[6]);
                 double price = Double.parseDouble(tokens[7]);
 
-                dealership.addVehicle(new Vehicle(vin, year, make, model, vehicleType, color, odometer, price));
+            dealership.addVehicle(new Vehicle(vin, year, make, model, vehicleType, color, odometer, price));
             }
-            reader.close();
+        reader.close();
         } catch (IOException e) {
             System.out.println("failed to load file.");
         }
