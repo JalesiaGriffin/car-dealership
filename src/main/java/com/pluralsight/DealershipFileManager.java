@@ -1,16 +1,16 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 
 public class DealershipFileManager {
+    private String FILE_NAME = "dealership.csv";
     public Dealership getDealership() {
         Dealership dealership = null;
         try {
             // INSTANTIATE READER
-            BufferedReader reader = new BufferedReader(new FileReader("dealership.csv"));
+            BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
             String input;
 
             // CREATE DEALERSHIP
@@ -44,6 +44,37 @@ public class DealershipFileManager {
     }
 
     public void saveDealership(Dealership dealership) {
+        try {
+            // DEALERSHIP
+            String name = dealership.getName();
+            String address = dealership.getAddress();
+            String phone = dealership.getPhone();
+            BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME));
+            writer.write(name + "|" + address + "|" + phone);
 
+
+            // VEHICLES
+            ArrayList<Vehicle> vehicles = dealership.getInventory();
+
+                for (Vehicle v : vehicles) {
+                    int vin = v.getVin();
+                    int year = v.getYear();
+                    String make = v.getMake();
+                    String model = v.getModel();
+                    String vehicleType = v.getVehicleType();
+                    String color = v.getColor();
+                    int odometer = v.getOdometer();
+                    double price = v.getPrice();
+
+                    writer.write(vin + "|" + year + "|" + make + "|" + model + "|" +
+                                vehicleType + "|" + color + "|" + odometer + "|" + price);
+                    writer.newLine();
+                }
+
+        writer.close();
+
+         } catch (IOException e){
+            System.out.println("failed to update dealership.");
+        }
     }
 }
