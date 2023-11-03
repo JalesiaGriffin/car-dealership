@@ -55,15 +55,25 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "vin=" + vin +
-                ", year=" + year +
-                ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", color='" + color + '\'' +
-                ", odometer=" + odometer +
-                ", price=" + price +
-                '}';
+        return  "vin: " + vin +
+                " year: " + year +
+                " make: " + make + '\'' +
+                " model: " + model + '\'' +
+                " vehicleType: " + vehicleType + '\'' +
+                " color: " + color + '\'' +
+                " odometer: " + odometer +
+                " price: " + price;
+    }
+
+    public static void printVehicleHeader() {
+        System.out.println(String.format("%s", "------------------------------------------------------------------------------------------------------------------------"));
+        System.out.println(String.format("%-15s %-15s %-20s %-15s %-15s %-15s %-15s %-15s", "vin", "year", "make",
+                "model", "type", "color", "odometer", "price"));
+        System.out.println(String.format("%s", "------------------------------------------------------------------------------------------------------------------------"));
+    }
+
+    public void printVehicle(Vehicle v) {
+        System.out.println(String.format("%-15s %-15s %-20s %-15s %-15s %-15s %-15s %-15s", v.getVin(), v.getYear(), v.getMake(),
+                v.getModel(), v.getVehicleType(), v.getColor(), v.getOdometer(), v.getPrice()));
     }
 }
