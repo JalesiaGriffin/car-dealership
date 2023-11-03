@@ -6,13 +6,12 @@ import java.util.Scanner;
 public class UserInterface {
 
     private Dealership dealership;
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan;
     public UserInterface() {
-        this.dealership = init();
+        scan = new Scanner(System.in);
     }
 
     public void display(){
-    Scanner scan = new Scanner(System.in);
     init();
 
     boolean running = true;
@@ -46,7 +45,7 @@ public class UserInterface {
         int max = scan.nextInt();
         scan.nextLine();
 
-        List<Vehicle> vehicles = dealership.getVehiclesByYear(min, max);
+        List<Vehicle> vehicles = dealership.getVehiclesByPrice(min, max);
         displayVehicles(vehicles);
     }
 
@@ -176,8 +175,8 @@ public class UserInterface {
         }
     }
 
-    private Dealership init(){
+    private void init(){
         DealershipFileManager dfm = new DealershipFileManager();
-        return dfm.getDealership();
+        dealership = dfm.getDealership();
     }
 }
