@@ -35,14 +35,15 @@ public class UserInterface {
                 default -> System.out.println("invalid response.");
             }
         }
+    scan.close();
     }
 
     public void processGetByPriceRequest(){
         System.out.print("Enter min price: ");
-        int min = scan.nextInt();
+        double min = scan.nextDouble();
 
         System.out.print("Enter max price");
-        int max = scan.nextInt();
+        double max = scan.nextDouble();
         scan.nextLine();
 
         List<Vehicle> vehicles = dealership.getVehiclesByPrice(min, max);
@@ -139,6 +140,7 @@ public class UserInterface {
         List<Vehicle> vehicles = dealership.getAllVehicles();
         System.out.print("Enter vin: ");
         int vin = scan.nextInt();
+        scan.nextLine();
 
         for (Vehicle v: vehicles) {
             if (v.getVin() == vin) {
