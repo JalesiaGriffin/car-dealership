@@ -100,11 +100,11 @@ public class Dealership {
         return vehicles;
     }
 
-    public List<Vehicle> getVehiclesByMileage(int odometer){
+    public List<Vehicle> getVehiclesByMileage(int min, int max){
         List<Vehicle> vehicles = new ArrayList<>();
         boolean found = false;
         for(Vehicle v: inventory){
-            if(v.getOdometer() == odometer){
+            if(v.getOdometer() >= min &&  v.getOdometer() <= max){
                 vehicles.add(v);
                 found = true;
             }

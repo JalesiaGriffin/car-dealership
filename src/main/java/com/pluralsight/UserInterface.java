@@ -39,10 +39,11 @@ public class UserInterface {
     }
 
     public void processGetByPriceRequest(){
+        System.out.println("\nSearch by Price");
         System.out.print("Enter min price: ");
         double min = scan.nextDouble();
 
-        System.out.print("Enter max price");
+        System.out.print("Enter max price: ");
         double max = scan.nextDouble();
         scan.nextLine();
 
@@ -51,6 +52,7 @@ public class UserInterface {
     }
 
     public void processGetByMakeModelRequest(){
+        System.out.println("\nSearch by Make & Model");
         System.out.print("Enter Make: ");
         String make = scan.nextLine();
 
@@ -62,10 +64,11 @@ public class UserInterface {
     }
 
     public void processGetByYearRequest(){
+        System.out.println("\nSearch by Year");
         System.out.print("Enter start year: ");
         int start = scan.nextInt();
 
-        System.out.print("Enter end year");
+        System.out.print("Enter end year: ");
         int end = scan.nextInt();
         scan.nextLine();
 
@@ -74,6 +77,7 @@ public class UserInterface {
     }
 
     public void processGetByColorRequest(){
+        System.out.println("\nSearch by Color");
         System.out.print("Enter Color: ");
         String color = scan.nextLine();
         List<Vehicle> vehicles = dealership.getVehiclesByColor(color);
@@ -81,14 +85,21 @@ public class UserInterface {
     }
 
     public void processGetByMileageRequest(){
-        System.out.print("Enter Mileage: ");
-        int mileage = scan.nextInt();
+        System.out.println("\nSearch by Mileage");
+        System.out.print("Enter Mileage min: ");
+        int min = scan.nextInt();
         scan.nextLine();
-        List<Vehicle> vehicles = dealership.getVehiclesByMileage(mileage);
+
+        System.out.print("Enter Mileage max: ");
+        int max = scan.nextInt();
+        scan.nextLine();
+
+        List<Vehicle> vehicles = dealership.getVehiclesByMileage(min, max);
         displayVehicles(vehicles);
     }
 
     public void processGetByVehicleTypeRequest(){
+        System.out.println("\nSearch by Type");
         System.out.print("Enter Vehicle Type: ");
         String type = scan.nextLine();
         List<Vehicle> vehicles = dealership.getVehiclesByType(type);
@@ -96,11 +107,13 @@ public class UserInterface {
     }
 
     public void processGetAllVehiclesRequest(){
+        System.out.println("\nAll Vehicles");
         List<Vehicle> vehicles = dealership.getAllVehicles();
         displayVehicles(vehicles);
     }
 
     public void processAddVehicleRequest(){
+        System.out.println("\nAdd Vehicle");
         System.out.print("Enter vin: ");
         int vin = scan.nextInt();
         scan.nextLine();
@@ -137,34 +150,38 @@ public class UserInterface {
     }
 
     public void processRemoveVehicleRequest(){
+        System.out.println("\nRemove Vehicle");
         List<Vehicle> vehicles = dealership.getAllVehicles();
         System.out.print("Enter vin: ");
         int vin = scan.nextInt();
         scan.nextLine();
 
+        boolean found = false;
         for (Vehicle v: vehicles) {
             if (v.getVin() == vin) {
                 dealership.removeVehicle(v);
                 System.out.println("vehicle removed.");
+                found = true;
                 break;
             }
-            else {
-                System.out.println("vehicle not found.");
-            }
+        }
+        if (!found) {
+            System.out.println("no results.");
         }
         DealershipFileManager dfm = new DealershipFileManager();
         dfm.saveDealership(dealership);
     }
 
     public void menu() {
-        System.out.println("\nMenu");
-        System.out.println("1) Find vehicles within a price range");
-        System.out.println("2) Find vehicles by make / model");
-        System.out.println("3) Find vehicles by year range");
-        System.out.println("4) Find vehicles by color");
-        System.out.println("5) Find vehicles by mileage range");
-        System.out.println("6) Find vehicles by type (car, truck, SUV, van)");
-        System.out.println("7) List ALL vehicles");
+        System.out.println("\nCar Dealership Manager");
+        System.out.println("vehicle search options:");
+        System.out.println("1) Price Range");
+        System.out.println("2) Make & Model");
+        System.out.println("3) Year Range");
+        System.out.println("4) Color");
+        System.out.println("5) Mileage Range");
+        System.out.println("6) Type (car, truck, SUV, van)");
+        System.out.println("7) All vehicles");
         System.out.println("8) Add a vehicle");
         System.out.println("9) Remove a vehicle");
         System.out.println("99) Quit\n");

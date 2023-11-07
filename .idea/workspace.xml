@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="858b6cae-46b1-48e4-a70e-1b1d6b968744" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/pluralsight/DealershipTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dealership.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dealership.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Dealership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Dealership.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pluralsight/DealershipTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pluralsight/DealershipTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,23 +62,7 @@
       <recent name="com.pluralsight" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DealershipTest.getVehiclesByType_ReturnsList_TypeFound">
-    <configuration name="DealershipTest.getVehiclesByColor_ReturnsList_ColorFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CarDealership" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pluralsight.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.pluralsight" />
-      <option name="MAIN_CLASS_NAME" value="com.pluralsight.DealershipTest" />
-      <option name="METHOD_NAME" value="getVehiclesByColor_ReturnsList_ColorFound" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="DealershipTest.getVehiclesByMakeModel_ReturnsList_MakeModelFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CarDealership" />
       <extension name="coverage">
@@ -104,6 +90,22 @@
       <option name="PACKAGE_NAME" value="com.pluralsight" />
       <option name="MAIN_CLASS_NAME" value="com.pluralsight.DealershipTest" />
       <option name="METHOD_NAME" value="getVehiclesByMileage_ReturnsList_ColorFound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DealershipTest.getVehiclesByPrice_ReturnsList_PriceFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarDealership" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pluralsight" />
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.DealershipTest" />
+      <option name="METHOD_NAME" value="getVehiclesByPrice_ReturnsList_PriceFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DealershipTest.getVehiclesByPrice_ReturnsList_PriceFound" />
+        <item itemvalue="JUnit.DealershipTest.getVehiclesByYear_ReturnsList_YearFound" />
         <item itemvalue="JUnit.DealershipTest.getVehiclesByType_ReturnsList_TypeFound" />
         <item itemvalue="JUnit.DealershipTest.getVehiclesByMileage_ReturnsList_ColorFound" />
         <item itemvalue="JUnit.DealershipTest.getVehiclesByMakeModel_ReturnsList_MakeModelFound" />
-        <item itemvalue="JUnit.DealershipTest.getVehiclesByColor_ReturnsList_ColorFound" />
-        <item itemvalue="JUnit.DealershipTest.getVehiclesByYear_ReturnsList_YearFound" />
       </list>
     </recent_temporary>
   </component>
