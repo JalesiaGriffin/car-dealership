@@ -12,13 +12,13 @@ class DealershipTest {
         //arrange
         DealershipFileManager dfm = new DealershipFileManager();
         Dealership d = dfm.getDealership();
-        int expectedValue = 2;
+        double expectedValue = 15995.0;
 
         //act
-        List<Vehicle> v = d.getVehiclesByPrice(15000, 17000);
+        List<Vehicle> v = d.getVehiclesByPrice(expectedValue, expectedValue);
 
         //assert
-        int actualValue = v.size();
+        double actualValue = v.get(0).getPrice();
         assertEquals(expectedValue, actualValue);
     }
 
@@ -42,13 +42,13 @@ class DealershipTest {
         //arrange
         DealershipFileManager dfm = new DealershipFileManager();
         Dealership d = dfm.getDealership();
-        int expectedValue = 3;
+        int expectedValue = 2017;
 
         //act
-        List<Vehicle> v = d.getVehiclesByYear(2018, 2019);
+        List<Vehicle> v = d.getVehiclesByYear(expectedValue, expectedValue);
 
         //assert
-        int actualValue = v.size();
+        int actualValue = v.get(0).getYear();
         assertEquals(expectedValue, actualValue);
     }
 
@@ -75,7 +75,7 @@ class DealershipTest {
         int expectedValue = 25000;
 
         //act
-        List<Vehicle> v = d.getVehiclesByMileage(expectedValue);
+        List<Vehicle> v = d.getVehiclesByMileage(expectedValue, expectedValue);
 
         //assert
         int actualValue = v.get(0).getOdometer();
